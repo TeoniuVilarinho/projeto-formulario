@@ -4,7 +4,7 @@
 
 ## ScreenShot
 
-<img src="./src/desing/projeto-formulario.png" alt="ScreenShot do site">
+<img src="./src/design/projeto-formulario.png" alt="ScreenShot do site">
 
 ## link
 
