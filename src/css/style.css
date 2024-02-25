@@ -17,7 +17,7 @@ main {
 .sessao-texto {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 338px;
     height: 100px;
     color: #fff;
     gap: 14px;
@@ -30,6 +30,7 @@ main {
 }
 
 .sessao-texto .texto {
+    width: 300px;
     font-size: 15px;
     font-weight: 400;
 }
@@ -40,7 +41,7 @@ main {
     background-color: #fff;
     width: 340px;
     height: 378px;
-    align-items: center;
+    align-items: space-between;
     justify-content: center;
     padding: 20px;
 }
@@ -62,27 +63,40 @@ main {
     border: 1px solid #000;
     border-radius: 5px;
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 400;
     color: #000;
     padding: 6px;
 }
 
 .sessao-formulario .formulario .input .campo.mensagem {
+    font-family: "Roboto", sans-serif;
+    color: #000;
+    border: 1px solid #000;
+    font-size: 15px;
+    font-weight: 400;
     height: 110px;
-    margin-bottom: 0;
+    resize: none;
+}
+
+.campo-preenchido {
+    border: 2px solid #00C22B;
+}
+
+.campo-nao-preenchido {
+    border: 2px solid #F52E2E;
 }
 
 .sessao-formulario .formulario .input .campo::placeholder{
     font-size: 15px;
     font-weight: 700;
     color: #a8a8a8;
-    padding: 5px;
 }
 
 .sessao-formulario .formulario .input .campo-obrigatorio {
     color: #f52e2e;
     font-size: 8px;
     font-weight: 400;
+    display: none;
 }
 
 .sessao-formulario .formulario .texto-campo-obrigatorio {
@@ -100,5 +114,5 @@ main {
     font-size: 15px;
     font-weight: 700;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 15px;
 }
