@@ -10,7 +10,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <main>
@@ -43,15 +43,19 @@
                 </div>
 
                 <div class="input">
-                    <input name="mensagem" placeholder="Mensagem *" class="campo mensagem">
+                    <textarea name="mensagem" placeholder="Mensagem *" class="campo mensagem"></textarea>
                     <p class="campo-obrigatorio">*campo obrigatório</p>
                 </div>
 
                 <p class="texto-campo-obrigatorio">*campos obrigatórios</p>
                 
-                <button class="botao">Enviar</button>
+                <button type="button" onclick="campoPreenchido()" class="botao" id="btn-enviar">
+                    Enviar
+                </button>
             </form>
         </section>
     </main>
+
+    <script type="text/javascript" src="./src/js/index.js"></script>
 </body>
 </html>
