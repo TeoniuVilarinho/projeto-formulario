@@ -3,20 +3,27 @@ const campoObrigatorio = document.querySelectorAll(".campo-obrigatorio")
 const botao = document.getElementById("btn-enviar")
 
 botao.addEventListener('click', () => {
+    campo.forEach(preenchido => {
+        if (preenchido.value !== "") {
+            preenchido.classList.add("campo-preenchido")
+        } else {
+            preenchido.classList.remove("campo-preenchido")
+        }
+    })
     
-    campo.forEach( input => {
-        if (input.value !== "") {
-            input.classList.toggle("campo-preenchido")
+    campo.forEach(naoPreenchido => {
+        if (naoPreenchido.value === "") {
+            naoPreenchido.classList.add("campo-nao-preenchido")
+        } else {
+            naoPreenchido.classList.remove("campo-nao-preenchido")
         }
     })
 
-    campo.forEach( input => {
-        if (input.value === "") {
-            input.classList.toggle("campo-nao-preenchido")
+    campoObrigatorio.forEach(ativo => {
+        if (ativo.value === "") {
+            ativo.classList.add("ativo")
+        } else {
+            ativo.classList.remove("ativo")
         }
-    })
-
-    campoObrigatorio.forEach( ativo => {
-        ativo.classList.toggle("ativo")
     })
 })
