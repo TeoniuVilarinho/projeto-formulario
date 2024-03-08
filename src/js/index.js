@@ -1,29 +1,32 @@
-const campo = document.querySelectorAll(".campo")
-const campoObrigatorio = document.querySelectorAll(".campo-obrigatorio")
-const botao = document.getElementById("btn-enviar")
+const formulario = document.getElementById('formulario')
+const campos = document.querySelectorAll('.input')
 
-botao.addEventListener('click', () => {
-    campo.forEach(preenchido => {
-        if (preenchido.value !== "") {
-            preenchido.classList.add("campo-preenchido")
-        } else {
-            preenchido.classList.remove("campo-preenchido")
-        }
-    })
-    
-    campo.forEach(naoPreenchido => {
-        if (naoPreenchido.value === "") {
-            naoPreenchido.classList.add("campo-nao-preenchido")
-        } else {
-            naoPreenchido.classList.remove("campo-nao-preenchido")
-        }
-    })
+formulario.addEventListener('submit', (e) => {
+  e.preventDefault()
 
-    campoObrigatorio.forEach(ativo => {
-        if (ativo.value === "") {
-            ativo.classList.add("ativo")
-        } else {
-            ativo.classList.remove("ativo")
-        }
-    })
+  checkInput()
 })
+
+function checkInput() {
+  campos.forEach((input) => {
+    if (input.value === "") {
+      naoPreenchido(input, "*campo obrigatório.")
+    } else {
+      preenchido(input)
+    }
+  }
+)}
+
+function naoPreenchido(input, message) {
+  const campo = input.parentElement
+  const small = campo.querySelector('small')
+
+  small.innerText = message
+  campo.className = "campo nao-preenchido"
+}
+
+function preenchido(input) {
+  const campo = input.parentElement
+
+  campo.className = "campo preenchido"
+}
