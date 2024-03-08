@@ -8,57 +8,53 @@
     <link rel="stylesheet" href="./src/css/reset.css">
     <link rel="stylesheet" href="./src/css/style.css">
     <link rel="stylesheet" href="./src/css/responsive.css">
-    <link rel="shortcut icon" href="./src/images/THE-ONE (626x626).jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="./src/images/THE-ONE-favicon.jpg" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main>
-        <section class="sessao-texto">
-            <h1 class="titulo">
-                FICOU COM DÚVIDA?
-                <br> 
-                NOS MANDE UMA MENSAGEM!
-            </h1>
-            <p class="texto">
-                caso tenha ficado com qualquer dúvida basta nos mandar uma mensagem e entraremos em contato em menos de 24h.
-            </p>
-        </section>
-        
-        <section class="sessao-formulario">
-            <form class="formulario">
-                <div class="input">
-                    <input type="text" name="nome" placeholder="Nome Completo *" class="campo">
-                    <p class="campo-obrigatorio">*campo obrigatório</p>
-                </div>
+  <main class="main">
+    <section class="sessao-texto">
+      <h1 class="titulo">
+        FICOU EM DÚVIDA?
+        <br>
+        NOS MANDE UMA MENSAGEM!
+      </h1>
+      <p class="texto">caso tenha ficado com qualquer dúvida basta nos mandar uma mensagem e entraremos em contato em menos de 24h.</p>
+    </section>
 
-                <div class="input">
-                    <input type="text" name="e-mail" placeholder="E-mail *" class="campo">
-                    <p class="campo-obrigatorio">*campo obrigatório</p>
-                </div>
-
-                <div class="input">
-                    <input type="text" name="telefone" placeholder="Telefone *" class="campo">
-                    <p class="campo-obrigatorio">*campo obrigatório</p>
-                </div>
-
-                <div class="input">
-                    <textarea name="mensagem" placeholder="Mensagem *" class="campo mensagem"></textarea>
-                    <p class="campo-obrigatorio">*campo obrigatório</p>
-                </div>
-
-                <p class="texto-campo-obrigatorio">*campos obrigatórios</p>
-                
-                <button type="button" onclick="campoPreenchido()" class="botao" id="btn-enviar">
-                    Enviar
-                </button>
-            </form>
-        </section>
-    </main>
-
-    <a href="http://" target="_blank" rel="noopener noreferrer"></a>
+    <section class="sessao-formulario">
+        <form class="formulario" id="formulario">
+          <div class="campo">
+            <input type="text" placeholder="Nome Completo *" id="nome" class="input">
+            <small class="small">Mensagem de erro</small>
+          </div>
+      
+          <div class="campo">
+            <input type="text" placeholder="E-mail *" id="email" class="input">
+            <small class="small">Mensagem de erro</small>
+          </div>
+      
+          <div class="campo">
+            <input type="text" placeholder="Telefone *" id="telefone" class="input">
+            <small class="small">Mensagem de erro</small>
+          </div>
+      
+          <div class="campo">
+            <textarea type="text" placeholder="Mensagem *" id="mensagem" class="input mensagem" maxlength="174"></textarea>
+            <small class="small">Mensagem de erro</small>
+          </div>
+      
+          <p class="texto-campos-obrigatorios">*campos obrigatórios</p>
+                      
+          <button type="submit" class="botao">
+            Enviar
+          </button>
+        </form>
+    </section>
+  </main>
 
     <script type="text/javascript" src="./src/js/index.js"></script>
 </body>
