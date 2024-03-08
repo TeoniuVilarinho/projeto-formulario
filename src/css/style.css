@@ -4,23 +4,29 @@ body {
     background-position: top left;
     background-size: contain;
     font-family: "Roboto", sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-main {
+.main {
     display: flex;
-    min-height: 100vh;
     align-items: center;
     justify-content: center;
-    gap: 60px;
+    gap: 40px;
 }
 
 .sessao-texto {
     display: flex;
     flex-direction: column;
-    width: 338px;
-    height: 100px;
-    color: #fff;
+    justify-content: center;
+    width: 350px;
+    height: 180px;
+    padding: 20px;
     gap: 14px;
+    color: #fff;
 }
 
 .sessao-texto .titulo {
@@ -36,96 +42,97 @@ main {
 }
 
 .sessao-formulario {
-    display: flex;
-    flex-direction: column;
     background-color: #fff;
     width: 340px;
-    height: 378px;
-    align-items: space-between;
-    justify-content: center;
-    padding: 20px;
+    height: 380px;
+    max-width: 100%;
 }
 
-.sessao-formulario .formulario {
-    display: flex;
-    flex-direction: column;
+.formulario {
+    padding: 10px;
     height: 100%;
 }
 
-.sessao-formulario .formulario .input {
-    width: 300px;
-    margin-bottom: auto;
+.formulario .campo {
+    margin-bottom: 6px;
+    padding: 10px 10px 6px 10px;
+    position: relative;
 }
-
-.sessao-formulario .formulario .input .campo {
-    font-family: "Roboto", sans-serif;
-    width: 100%;
-    height: 30px;
+  
+.formulario .campo .input {
+    display: block;
     border: 1px solid #000;
-    background-color: #fff;
     border-radius: 5px;
-    font-size: 15px;
-    font-weight: 400;
-    padding: 5px;
-}
-
-.sessao-formulario .formulario .input .campo.mensagem {
     font-family: "Roboto", sans-serif;
-    height: 110px;
     font-size: 15px;
     font-weight: 400;
-    color: #000;
-    resize: none;
+    width: 100%;
+    padding: 6px;
 }
-
-.sessao-formulario .formulario .input .campo-preenchido {
-    border: 2px solid #00C22B;
-}
-
-.sessao-formulario .formulario .input .campo-nao-preenchido {
-    border: 2px solid #F52E2E;
-}
-
-
-.sessao-formulario .formulario .input .campo::placeholder{
+  
+.formulario .campo .mensagem {
+    border: 1px solid #000;
+    border-radius: 10px;
+    font-family: "Roboto", sans-serif;
     font-size: 15px;
+    width: 100%;
+    height: 100px;
+    padding: 6px;
+    resize: none;
+    display: flex;
+}
+
+.formulario .campo .input::placeholder,
+.formulario .campo .mensagem::placeholder {
     font-weight: 700;
     color: #a8a8a8;
 }
 
-.sessao-formulario .formulario .input .campo-obrigatorio {
-    display: flex;
-    color: #f52e2e;
+
+.formulario .campo .small {
+    position: absolute;
     font-size: 8px;
     font-weight: 400;
-    opacity: 0;    
+    color: #e74c3c;
+    bottom: 10;
+    left: 0;
+    padding-left: 14px;
+    visibility: hidden;
 }
 
-.sessao-formulario .formulario .input .ativo {
-    opacity: 1;
-}
-
-.sessao-formulario .formulario .texto-campo-obrigatorio {
+.formulario .texto-campos-obrigatorios {
     font-size: 15px;
-    font-weight: 400;
-    color: #000;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin-bottom: 10px;
 }
-
-.sessao-formulario .formulario .botao {
+  
+.formulario .botao {
     background-color: #3ccc87;
-    color: #fff;
     border: none;
-    border-radius: 5px;
-    padding: 12px;
+    color: #fff;
     font-size: 15px;
     font-weight: 700;
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 0px 10px 0px 10px;
     cursor: pointer;
-    margin-top: auto;
 }
 
-.sessao-formulario .formulario .botao:hover {
+.formulario .botao:hover {
+    transform: scale(1.01);
     box-shadow: 0px 0px 40px -15px rgba(0, 0, 0, 0.8);
-    transition: ease-in-out 0.4s;
+}
+  
+.campo.preenchido .input,
+.campo.preenchido .mensagem {
+    border: 1px solid #2ecc71;
+}
+  
+.campo.nao-preenchido .input,
+.campo.nao-preenchido .mensagem {
+    border: 1px solid #e74c3c;
+}
+  
+.campo.nao-preenchido .small {
+    visibility: visible;
 }
